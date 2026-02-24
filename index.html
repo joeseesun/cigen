@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>词根词缀记忆工坊</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg bg-a"></div>
+    <div class="bg bg-b"></div>
+    <header class="hero">
+      <p class="eyebrow">Root & Affix Memory Lab</p>
+      <h1>词根词缀记忆工坊</h1>
+      <p class="sub">
+        基于 PDF 自动提取词根词缀数据，支持检索、拆解联想、闪卡训练和选择题巩固。
+      </p>
+      <div class="stats" id="metaStats">
+        <span>加载中...</span>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="map">学习地图</button>
+        <button class="tab" data-tab="flash">闪卡训练</button>
+        <button class="tab" data-tab="quiz">选择题</button>
+      </div>
+    </header>
+
+    <main class="app">
+      <section class="panel active" id="panel-map">
+        <div class="toolbar">
+          <input
+            type="search"
+            id="rootSearch"
+            placeholder="搜索词根/词缀/中文提示，例如: trans, anti, 反"
+          />
+          <button id="randomRoot">随机词根</button>
+        </div>
+        <div class="map-layout">
+          <aside class="root-list" id="rootList"></aside>
+          <article class="root-detail" id="rootDetail">
+            <h2>选择左侧词根查看详情</h2>
+            <p>你可以先从高频词根开始，再结合例词做联想记忆。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-flash">
+        <div class="flash-wrap">
+          <div class="flash-meta" id="flashMeta">闪卡准备中...</div>
+          <div class="flash-card" id="flashCard"></div>
+          <div class="flash-actions">
+            <button id="flashReveal">显示答案</button>
+            <button id="flashAgain">再看一次</button>
+            <button id="flashKnow">我记住了</button>
+            <button id="flashNext">下一张</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-quiz">
+        <div class="quiz-wrap">
+          <div class="quiz-score" id="quizScore">正确率: 0 / 0</div>
+          <div class="quiz-question" id="quizQuestion">题目加载中...</div>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <button id="nextQuiz">下一题</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
