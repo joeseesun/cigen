@@ -1,9 +1,9 @@
 # 词根词缀记忆工坊
 
-基于 `XDF________.pdf` 自动抽取词根词缀与例词，构建交互式记忆 Web App。
+用[`https://pdfresources.com/`](https://pdfresources.com/)搜索到了一个词根PDF,从而引发这个idea，从其中自动抽取词根词缀与例词，构建交互式记忆 Web App。
 
-在线 Pages 地址（发布后可用）:
-`https://<github-username>.github.io/<repo-name>/`
+在线 Pages 地址:
+[https://jesselau76.github.io/cigen/](https://jesselau76.github.io/cigen/)
 
 ## 功能
 
@@ -40,7 +40,5 @@
    - Branch 选择 `main` / `root`
 3. 等待 1-2 分钟即可通过上方 Pages 地址访问。
 
-## 说明
 
-- 解析来自 OCR PDF，个别词条可能有噪音，可在后续迭代增加人工校对或词表白名单。
-- 如果 PDF 存在版权风险，可只公开 `data/roots_affixes.json` 与前端代码，不上传原始 PDF。
+
