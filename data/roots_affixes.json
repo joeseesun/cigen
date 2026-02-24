@@ -2776,7 +2776,7 @@
       ]
     },
     {
-      "root": "plse",
+      "root": "pose",
       "gloss": "放 放出去 暴露",
       "wordCount": 2,
       "sampleWords": [
@@ -7395,7 +7395,7 @@
       "id": "e254",
       "word": "expose",
       "meaning": "暴露",
-      "decomposition": "ex+plse 放→放出去→暴露",
+      "decomposition": "ex+pose 放→放出去→暴露",
       "page": 4,
       "components": [
         {
@@ -7403,7 +7403,7 @@
           "hint": ""
         },
         {
-          "morpheme": "plse",
+          "morpheme": "pose",
           "hint": "放 放出去 暴露"
         }
       ]
@@ -12064,7 +12064,7 @@
       "id": "e523",
       "word": "repose",
       "meaning": "休息；躺下",
-      "decomposition": "re+plse 放→入下〔工作〕→休息",
+      "decomposition": "re+pose 放→入下〔工作〕→休息",
       "page": 8,
       "components": [
         {
@@ -12072,7 +12072,7 @@
           "hint": ""
         },
         {
-          "morpheme": "plse",
+          "morpheme": "pose",
           "hint": "放 入下〔工作〕 休息"
         }
       ]
