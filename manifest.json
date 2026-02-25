@@ -1,0 +1,43 @@
+{
+  "name": "词根词缀记忆工坊",
+  "short_name": "词根工坊",
+  "description": "基于 PDF 自动提取词根词缀数据，支持检索、拆解联想、闪卡训练和选择题巩固",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "闪卡训练",
+      "short_name": "闪卡",
+      "description": "开始闪卡记忆训练",
+      "url": "/?tab=flash",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "选择题",
+      "short_name": "测试",
+      "description": "开始选择题练习",
+      "url": "/?tab=quiz",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

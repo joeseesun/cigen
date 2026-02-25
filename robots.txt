@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cigen.qiaomu.ai/sitemap.xml

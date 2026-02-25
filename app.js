@@ -1,5 +1,64 @@
 const DATA_PATH = "./data/roots_affixes.json";
 const STORAGE_KEY = "cigen-root-progress-v1";
+const LANG_KEY = "cigen-language";
+
+// 多语言配置
+const i18n = {
+  zh: {
+    title: "词根词缀记忆工坊",
+    eyebrow: "Root & Affix Memory Lab",
+    subtitle: "基于 PDF 自动提取词根词缀数据，支持检索、拆解联想、闪卡训练和选择题巩固。",
+    loading: "加载中...",
+    tabMap: "学习地图",
+    tabFlash: "闪卡训练",
+    tabQuiz: "选择题",
+    searchPlaceholder: "搜索词根/词缀/中文提示，例如: trans, anti, 反",
+    randomRoot: "随机词根",
+    selectRoot: "选择左侧词根查看详情",
+    selectRootDesc: "你可以先从高频词根开始，再结合例词做联想记忆。",
+    rootMeaning: "词根含义",
+    examples: "例词",
+    flashPreparing: "闪卡准备中...",
+    flashReveal: "显示答案",
+    flashAgain: "再看一遍",
+    flashKnow: "我记住了",
+    flashNext: "下一张",
+    quizScore: "正确率",
+    quizLoading: "题目加载中...",
+    nextQuiz: "下一题",
+    statsTotal: "共",
+    statsRoots: "个词根",
+    statsExamples: "个例词",
+  },
+  en: {
+    title: "Root & Affix Memory Lab",
+    eyebrow: "Root & Affix Memory Lab",
+    subtitle: "Auto-extract root and affix data from PDFs, with search, flashcards, and quizzes.",
+    loading: "Loading...",
+    tabMap: "Study Map",
+    tabFlash: "Flashcards",
+    tabQuiz: "Quiz",
+    searchPlaceholder: "Search roots/affixes, e.g.: trans, anti, opposite",
+    randomRoot: "Random Root",
+    selectRoot: "Select a root from the left to view details",
+    selectRootDesc: "Start with high-frequency roots and use examples for associative memory.",
+    rootMeaning: "Root Meaning",
+    examples: "Examples",
+    flashPreparing: "Preparing flashcards...",
+    flashReveal: "Reveal Answer",
+    flashAgain: "Review Again",
+    flashKnow: "Got It",
+    flashNext: "Next Card",
+    quizScore: "Score",
+    quizLoading: "Loading question...",
+    nextQuiz: "Next Question",
+    statsTotal: "Total",
+    statsRoots: "roots",
+    statsExamples: "examples",
+  }
+};
+
+let currentLang = localStorage.getItem(LANG_KEY) || 'zh';
 
 const state = {
   roots: [],
@@ -42,15 +101,74 @@ const els = {
   quizOptions: document.getElementById("quizOptions"),
   quizFeedback: document.getElementById("quizFeedback"),
   nextQuiz: document.getElementById("nextQuiz"),
+  langBtn: document.getElementById("langBtn"),
 };
+
+// 获取翻译文本
+function t(key) {
+  return i18n[currentLang][key] || key;
+}
+
+// 切换语言
+function toggleLanguage() {
+  currentLang = currentLang === 'zh' ? 'en' : 'zh';
+  localStorage.setItem(LANG_KEY, currentLang);
+  updateUILanguage();
+}
+
+// 更新 UI 语言
+function updateUILanguage() {
+  // 更新页面标题
+  document.title = t('title');
+  document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+
+  // 更新语言按钮
+  els.langBtn.textContent = currentLang === 'zh' ? '🌐 EN' : '🌐 中文';
+
+  // 更新 header
+  document.querySelector('.eyebrow').textContent = t('eyebrow');
+  document.querySelector('h1').textContent = t('title');
+  document.querySelector('.sub').textContent = t('subtitle');
+
+  // 更新 tabs
+  els.tabs[0].textContent = t('tabMap');
+  els.tabs[1].textContent = t('tabFlash');
+  els.tabs[2].textContent = t('tabQuiz');
+
+  // 更新搜索框
+  els.rootSearch.placeholder = t('searchPlaceholder');
+  els.randomRoot.textContent = t('randomRoot');
+
+  // 更新闪卡按钮
+  els.flashReveal.textContent = t('flashReveal');
+  els.flashAgain.textContent = t('flashAgain');
+  els.flashKnow.textContent = t('flashKnow');
+  els.flashNext.textContent = t('flashNext');
+
+  // 更新选择题按钮
+  els.nextQuiz.textContent = t('nextQuiz');
+
+  // 重新渲染
+  renderMeta();
+  if (state.selectedRoot) {
+    renderRootDetail(state.selectedRoot);
+  } else {
+    els.rootDetail.innerHTML = `<h2>${t('selectRoot')}</h2><p>${t('selectRootDesc')}</p>`;
+  }
+  renderFlashCard();
+}
 
 bindEvents();
 loadData();
+updateUILanguage(); // 初始化语言
 
 function bindEvents() {
   els.tabs.forEach((tab) => {
     tab.addEventListener("click", () => activateTab(tab.dataset.tab));
   });
+
+  // 语言切换
+  els.langBtn.addEventListener("click", toggleLanguage);
 
   els.rootSearch.addEventListener("input", () => {
     renderRootList(els.rootSearch.value.trim());
@@ -145,11 +263,16 @@ function buildRootToEntries(entries) {
 function renderMeta(meta = {}) {
   clearNode(els.metaStats);
   const masteredCount = Object.values(state.progress.mastered).filter(Boolean).length;
-  const chips = [
+  const chips = currentLang === 'zh' ? [
     `词条 ${meta.entryCount || state.entries.length}`,
     `词根/词缀 ${meta.rootCount || state.roots.length}`,
     `已掌握 ${masteredCount}`,
     `测验 ${state.progress.quizCorrect}/${state.progress.quizTotal}`,
+  ] : [
+    `${meta.entryCount || state.entries.length} entries`,
+    `${meta.rootCount || state.roots.length} roots/affixes`,
+    `${masteredCount} mastered`,
+    `Quiz ${state.progress.quizCorrect}/${state.progress.quizTotal}`,
   ];
   chips.forEach((text) => {
     const chip = document.createElement("span");

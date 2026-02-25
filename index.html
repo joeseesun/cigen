@@ -3,8 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>词根词缀记忆工坊</title>
+
+    <!-- SEO Meta Tags -->
+    <title>词根词缀记忆工坊 - 英语单词词根词缀学习工具</title>
+    <meta name="description" content="基于 PDF 自动提取词根词缀数据，支持智能检索、拆解联想、闪卡训练和选择题巩固。科学记忆法帮你快速掌握英语词汇。" />
+    <meta name="keywords" content="词根词缀,英语学习,单词记忆,闪卡,词汇学习,英语词根,词缀,背单词" />
+    <meta name="author" content="vista8" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://cigen.qiaomu.ai/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cigen.qiaomu.ai/" />
+    <meta property="og:title" content="词根词缀记忆工坊 - 英语单词词根词缀学习工具" />
+    <meta property="og:description" content="基于 PDF 自动提取词根词缀数据，支持智能检索、拆解联想、闪卡训练和选择题巩固。" />
+    <meta property="og:image" content="https://cigen.qiaomu.ai/og-image.png" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cigen.qiaomu.ai/" />
+    <meta name="twitter:title" content="词根词缀记忆工坊" />
+    <meta name="twitter:description" content="基于 PDF 自动提取词根词缀数据，支持智能检索、闪卡训练和选择题巩固。" />
+    <meta name="twitter:image" content="https://cigen.qiaomu.ai/og-image.png" />
+    <meta name="twitter:creator" content="@vista8" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="词根工坊" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "词根词缀记忆工坊",
+      "url": "https://cigen.qiaomu.ai/",
+      "description": "基于 PDF 自动提取词根词缀数据，支持智能检索、拆解联想、闪卡训练和选择题巩固。",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "vista8",
+        "url": "https://x.com/vista8"
+      }
+    }
+    </script>
   </head>
   <body>
     <div class="bg bg-a"></div>
@@ -68,6 +127,26 @@
       </section>
     </main>
 
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button id="langBtn" title="Switch Language / 切换语言">🌐 EN</button>
+    </div>
+
     <script src="./app.js"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('SW registered:', registration);
+            })
+            .catch(error => {
+              console.log('SW registration failed:', error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
