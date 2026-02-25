@@ -17,7 +17,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/joeseesun/cigen?style=social)](https://github.com/joeseesun/cigen/stargazers)
 
-**一键部署你自己的词根词缀记忆工坊 👆**
+### [🚀 立即体验 →](https://cigen.qiaomu.ai)
+
+**或一键部署你自己的词根词缀记忆工坊 👆**
 
 </div>
 
@@ -44,8 +46,9 @@
 
 ## 🚀 在线体验
 
+- **本 Fork 自定义域名**: [https://cigen.qiaomu.ai](https://cigen.qiaomu.ai) ⚡️ (推荐)
+- **本 Fork Vercel 域名**: [https://cigen-vercel.vercel.app](https://cigen-vercel.vercel.app)
 - **原作者 GitHub Pages**: [https://jesselau76.github.io/cigen/](https://jesselau76.github.io/cigen/)
-- **本 Fork Vercel 部署**: [https://cigen-vercel.vercel.app](https://cigen-vercel.vercel.app) ⚡
 
 ## ✨ 功能特性
 
