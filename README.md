@@ -1,5 +1,16 @@
 # 词根词缀记忆工坊
 
+> **🙏 致谢**
+>
+> 本项目基于 [@jesselaunz](https://x.com/jesselaunz) 的原始项目 [jesselau76/cigen](https://github.com/jesselau76/cigen) 改造而来。
+>
+> 感谢原作者的创意和开源分享！本 fork 版本主要增加了 **Vercel 一键部署支持**，让更多人能轻松部署自己的词根词缀记忆工坊。
+>
+> - **原项目地址**: https://github.com/jesselau76/cigen
+> - **原作者 X**: [@jesselaunz](https://x.com/jesselaunz)
+
+---
+
 <div align="center">
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/joeseesun/cigen)
@@ -14,10 +25,27 @@
 
 用[`https://pdfresources.com/`](https://pdfresources.com/)搜索到了一个词根PDF,从而引发这个idea，从其中自动抽取词根词缀与例词，构建交互式记忆 Web App。
 
+## 🆕 本 Fork 版本的改进
+
+相比原项目，本版本增加了以下功能：
+
+| 改进项 | 说明 |
+|--------|------|
+| 🚀 **Vercel 一键部署** | 添加 `vercel.json` 配置，支持 30 秒快速部署 |
+| ⚡ **全球 CDN 加速** | 通过 Vercel 边缘网络，全球访问速度更快 |
+| 🔒 **自动 HTTPS** | 无需配置，自动获得 SSL 证书 |
+| 📚 **完善的文档** | 详细的本地开发、部署、贡献指南 |
+| 📦 **项目元数据** | 添加 `package.json` 和 `LICENSE` 文件 |
+| 🎨 **专业 README** | 徽章、特性表格、Star History 等 |
+
+**原项目依然优秀**，如果你只需要 GitHub Pages 部署，推荐直接使用[原项目](https://github.com/jesselau76/cigen)。
+
+---
+
 ## 🚀 在线体验
 
-- **Vercel 部署**: [Coming Soon]
-- **GitHub Pages**: [https://jesselau76.github.io/cigen/](https://jesselau76.github.io/cigen/)
+- **原作者 GitHub Pages**: [https://jesselau76.github.io/cigen/](https://jesselau76.github.io/cigen/)
+- **本 Fork Vercel 部署**: [Coming Soon]
 
 ## ✨ 功能特性
 
