@@ -45,7 +45,7 @@
 ## 🚀 在线体验
 
 - **原作者 GitHub Pages**: [https://jesselau76.github.io/cigen/](https://jesselau76.github.io/cigen/)
-- **本 Fork Vercel 部署**: [Coming Soon]
+- **本 Fork Vercel 部署**: [https://cigen-vercel.vercel.app](https://cigen-vercel.vercel.app) ⚡
 
 ## ✨ 功能特性
 
