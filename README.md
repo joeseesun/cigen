@@ -32,7 +32,23 @@
 3. 打开浏览器访问:
    `http://localhost:8080`
 
-## 发布到 GitHub Pages
+## 部署
+
+### Vercel 部署（推荐）
+
+1. 安装 Vercel CLI：
+   ```bash
+   npm i -g vercel
+   ```
+
+2. 在项目根目录运行：
+   ```bash
+   vercel
+   ```
+
+3. 按照提示完成部署配置，项目会自动部署到 Vercel。
+
+### GitHub Pages 部署
 
 1. 新建 GitHub 仓库并推送代码（分支 `main`）。
 2. 仓库 `Settings -> Pages -> Build and deployment`:

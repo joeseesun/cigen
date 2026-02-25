@@ -1,0 +1,23 @@
+{
+  "name": "cigen",
+  "version": "1.0.0",
+  "description": "词根词缀记忆工坊 - 基于 PDF 自动提取词根词缀数据，支持检索、拆解联想、闪卡训练和选择题巩固",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "extract": "python3 scripts/extract_pdf_data.py"
+  },
+  "keywords": [
+    "vocabulary",
+    "roots",
+    "affixes",
+    "flashcards",
+    "quiz"
+  ],
+  "author": "jesselau76",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joeseesun/cigen"
+  }
+}
